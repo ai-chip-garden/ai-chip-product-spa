@@ -1,0 +1,27 @@
+<h5 class="heading-quinary technology__space-text">
+    <span style="opacity: .25; font-weight: 700;">03</span> Space Launch 101
+</h5>
+
+
+<div class="app-technology">
+    <nav class="technology__navigation">
+        <ul class="technology__list">
+            <li class="technology__item" id = "item-1" routerLink = "launch-vehicle">
+                <h4 class="heading-quaternary">1</h4>
+            </li>
+            <li class="technology__item" id = "item-2" routerLink = "space-capsule">
+                <h4 class="heading-quaternary">2</h4>
+            </li>
+            <li class="technology__item" id = "item-3" routerLink = "spaceport">
+                <h4 class="heading-quaternary">3</h4>
+            </li>
+        </ul>
+    </nav>
+
+    <router-outlet (activate)='onActivate($event)'></router-outlet>
+
+    <picture class="technology__image">
+        <source id = "img-src-tech" srcset = "{{imgPath}}-landscape.jpg" media = "(max-width: 62.5em)">
+        <img id = "img-tech" src="{{imgPath}}-portrait.jpg" alt="Launch Vehicle image" class="technology__image">
+    </picture>
+</div>

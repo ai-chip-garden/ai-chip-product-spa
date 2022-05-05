@@ -1,0 +1,188 @@
+app-product {
+    align-self: flex-end;
+    grid-row: 2 / -1;
+    grid-column: col-start 1 / -1;
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    grid-template-columns:
+        minmax(1rem, 1fr) [main-start] 65rem [main-end]
+        1fr [image-start] 51.4rem [image-end] minmax(1rem, 1fr);
+    position: relative;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: minmax(1rem, 1fr) [main-start] min-content [main-end] minmax(1rem, 1fr);
+        text-align: center;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        align-self: auto;
+    }
+}
+
+app-douglas,
+app-mark,
+app-anousheh,
+app-victor {
+    align-self: flex-end;
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: minmax(70rem, min-content);
+    grid-template-columns:
+        minmax(1rem, 1fr) [main-start]
+        65rem [main-end] 1fr [image-start] 51.4rem [image-end] minmax(1rem, 1fr);
+
+    @media only screen and (max-width: $bp-large) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-template-rows: min-content;
+        grid-template-columns: 1fr [main-start] minmax(min-content, 80%) [main-end] 1fr;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        align-self: center;
+    }
+}
+
+.app-product {
+    grid-row-start: 1;
+    grid-column-start: main-start;
+    align-self: center;
+    animation: moveInRight 0.7s ease-out;
+
+    @media only screen and (max-width: $bp-large) {
+        margin: 6rem 0 10rem 0;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-row-start: 2;
+        margin-bottom: 0;
+    }
+    .paragraph {
+        width: 70%;
+
+        @media only screen and(max-width: $bp-large) {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 1.8rem;
+        }
+    }
+}
+
+.product {
+    &__meet-text {
+        animation: moveInRight 0.7s ease-out;
+        grid-row-start: 1;
+        grid-column-start: main-start;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column-start: 1;
+            text-align: left;
+            margin-left: 8%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin: 0;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+    }
+
+    &__commander-text {
+        opacity: 0.5;
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__buttons-list {
+        grid-column: main-start;
+        display: flex;
+        justify-content: start;
+        list-style: none;
+        position: absolute;
+        bottom: 8%;
+        animation: moveInLeft 1s ease-out;
+
+        @media only screen and (max-width: $bp-large) {
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            top: 40%;
+            left: 50%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            top: auto;
+            bottom: 44%;
+        }
+    }
+
+    &__button{
+
+        &:focus-visible{
+            outline: none;
+        }
+    }
+
+    &__button:not(:last-child) {
+        margin-right: 3rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-right: 1.8rem;
+        }
+    }
+
+    &__button::after {
+        content: "";
+        display: inline-block;
+        background-color: $color-white;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        opacity: 0.17;
+        cursor: pointer;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+    }
+
+    &__button:hover::after {
+        opacity: 0.5;
+    }
+    &__button:active::after,
+    &__button:focus::after {
+        opacity: 1;
+    }
+
+    &__image {
+        grid-column-start: image-start;
+        animation: moveInLeft 1s ease-out;
+        align-self: flex-end;
+        width: 50rem;
+        height: 70rem;
+        object-fit: contain;
+        object-position: bottom;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column-start: 2;
+            justify-self: center;
+            object-fit: contain;
+            object-position: bottom;
+            height: 60rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 32.7rem;
+            height: 22.3rem;
+            grid-row-start: 1;
+
+            border-bottom: 1px solid #383b4b;
+        }
+    }
+}

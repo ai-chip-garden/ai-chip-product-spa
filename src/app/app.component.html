@@ -1,0 +1,29 @@
+<header class="header" id = "header">
+    <img src="../assets/shared/logo.svg" alt="Logo Space Tourism Journey" class="header__logo">
+    <img src="../assets/shared/icon-close.svg" alt="Close icon" class="navigation__close-button" id = "close-button" (click) = "closeMenu()">
+    <div class="header__menu-container" id = "menu-container" (click) = "openMenu()">
+        <nav class="navigation__nav" id = "menu">
+            <ul class="navigation__list">
+                <li class="navigation__item nav-text" routerLink = 'home'>
+                    <span style="margin-right: 1rem; font-weight: 600;">00</span>
+                    Home
+                </li>
+                <li class="navigation__item nav-text" routerLink = 'company'>
+                    <span style="margin-right: 1rem; font-weight: 600;">01</span>
+                    Company
+                </li>
+                <li class="navigation__item nav-text" routerLink = 'product'>
+                    <span style="margin-right: 1rem; font-weight: 600;">02</span>
+                    Product
+                </li>
+                <li class="navigation__item nav-text" routerLink = 'tech'>
+                    <span style="margin-right: 1rem; font-weight: 600;">03</span>
+                    Technology
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <router-outlet></router-outlet>
+</header>

@@ -1,0 +1,9 @@
+name = "ai-chips-product"
+type = 'webpack'
+account_id = '7de76dbba0d8e0ad1d08d4acda8a3b03'
+route = ''
+zone_id = ''
+usage_model = ''
+workers_dev = true
+target_type = "webpack"
+site = {bucket = "./dist/ai-chips-product",entry-point = "workers-site"}

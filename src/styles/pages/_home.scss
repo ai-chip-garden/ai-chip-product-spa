@@ -1,0 +1,93 @@
+app-home {
+    align-self: center;
+    grid-row: 2 / -1;
+    grid-column: col-start 1 / -1;
+    display: grid;
+    grid-template-rows: min-content 8rem;
+    grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
+
+    @media only screen and (max-width: $bp-large) {
+        align-self: flex-start;
+        grid-row-start: 2;
+        grid-row-gap: 15%;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: 0.5fr [text-start] minmax(min-content, 1fr) [text-end] 0.5fr;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 0.5fr [text-start] minmax(min-content, 80%) [text-end] 0.5fr;
+    }
+}
+
+.home {
+    &__main-text {
+        animation: moveInRight 1s ease-out;
+        grid-column-start: text-start;
+        grid-row-start: 1;
+
+        @media only screen and (max-width: $bp-large) {
+            text-align: center;
+            justify-self: center;
+            margin-top: 8rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 4rem;
+        }
+    }
+}
+
+.btn-explore {
+    animation: moveInRight 1s ease-out;
+    color: black;
+    background-color: $color-white;
+    border-radius: 100%;
+    width: 27.4rem;
+    height: 27.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: col-start 4;
+    grid-row-start: 1;
+    align-self: flex-end;
+
+    cursor: pointer;
+    position: relative;
+
+    z-index: 999;
+
+    @media only screen and (max-width: $bp-large) {
+        justify-self: center;
+        grid-column-start: text-start;
+        grid-row-start: 2;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    &::before {
+        content: "";
+        background-color: rgba($color-white, 0.1);
+        width: 27.4rem;
+        height: 27.4rem;
+        border-radius: 100%;
+        transition: 0.2s all;
+        position: absolute;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 15rem;
+            height: 15rem;
+        }
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1.5);
+        }
+    }
+}

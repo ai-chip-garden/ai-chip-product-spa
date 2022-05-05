@@ -1,0 +1,15 @@
+<h5 class="heading-quinary company__pick-text">
+    <span style = "opacity: .25; font-weight: 700;">01</span> Pick your company
+</h5>
+
+<img src="{{imgPath}}.png" alt="Moon Image company" class="company__image">
+
+<ul class="company__list">
+
+    <li class="company__item nav-text" id = "moon-button" routerLink = "moon">Moon</li>
+    <li class="company__item nav-text" routerLink = "mars">Mars</li>
+    <li class="company__item nav-text" routerLink = "europa">Europa</li>
+    <li class="company__item nav-text" routerLink = "titan">Titan</li>
+</ul>
+
+<router-outlet (activate) = "onActivate($event)"></router-outlet>

@@ -1,0 +1,102 @@
+.navigation {
+    &__nav {
+        background: rgba(255, 255, 255, 0.04);
+        -moz-backdrop-filter: blur(26px);
+        backdrop-filter: blur(26px);
+        position: relative;
+
+        &::before {
+            content: "";
+            background-color: $color-white;
+            height: 1px;
+            width: 43%;
+            position: absolute;
+            top: 50%;
+            left: -38%;
+            opacity: 0.25;
+            mix-blend-mode: normal;
+
+            @media only screen and (max-width: $bp-largest) {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            display: block;
+            width: 70vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: .2s all;
+        }
+    }
+
+    &__list {
+        padding: 0 13%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        list-style: none;
+        width: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10rem;
+        }
+    }
+
+    &__item {
+        padding: 4rem 0;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 3px solid rgba($color-white, 0.5);
+        }
+
+        &:active,
+        &:focus {
+            border-bottom: 3px solid $color-white;
+        }
+
+        @media only screen and (max-width: $bp-large) and (min-width: $bp-medium) {
+            span {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: 1.5rem 0;
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+            &:active,
+            &:focus {
+                border: none;
+            }
+        }
+    }
+
+    &__close-button {
+        display: none;
+
+        @media only screen and (max-width: $bp-medium) {
+            
+            color: $color-secondary;
+            width: 2.4rem;
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    }
+}
